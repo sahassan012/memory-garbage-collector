@@ -1,6 +1,6 @@
 # Memory Garbage Collector for C
 ## About
-In C, dynamic memory accessed via ``malloc`` and ``free`` allow control and interpretability of programs. Memory Garbage Collector is a type of dynamic memory management that is an implicit allocator. This means that it does not explicitly free the unused memory of a program. This tool finds the blocks that are not being used and returns them to the process as free chunks of memory. 
+In C, dynamic memory accessed via ``malloc`` and ``free`` allow control and interpretability. Memory Garbage Collector is a type of memory management that is an implicit allocator. This means that it does not explicitly free the unused memory of a program. This tool finds the blocks that are not being used and returns them to the process as free chunks of memory. 
 
 ## How it works
 Starting from a set of root pointers stored in an array of pointers, the object graphs(implemented as singly-linked lists) are traversed to find all the reachable chunks. These chunks are then marked using the second lowest order bit in the header of each chunk. 
